@@ -1,0 +1,43 @@
+.card {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1.5rem;
+    max-inline-size: 280px;
+    margin: auto;
+}
+
+.card .coment-first-text {
+    margin: 1.5rem 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.card .coment-second-text {
+    font: var(--body2);
+    margin: 0;
+    opacity: 0.5;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        text-align: center;
+        max-inline-size: 1132px;
+      }
+    .card .coment-first-text {
+        font: var(--headline4);
+        text-align: center;
+      }
+    .card .coment-second-text {
+        font: var(--headline5);
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        padding: 5rem;
+}
+}
