@@ -36,7 +36,6 @@
         </div>
     </header>
     <div class="wrapper">
-    
         <section  aria-label="main" class="hero" id="main">
             <div class="hero-image">
                 <img src="./images/edison.jpg" wigth="338" height="330" alt="Edison">
@@ -59,11 +58,11 @@
             </div>   
         </section>
 
-        <section class="coment">
+        <div class="coment">
             <p class="coment-first-text">A lo largo de mi carrera como Frontend, he tenido el privilegio de trabajar en proyectos retadores e increíbles</p>
             <p class="coment-second-text">Aquí hay algunos que me gustaría compartir.</p>
             <a href="#Project"><img src="./icons/arrow-down.svg" alt="Acontinuacion"></a>
-        </section>
+        </div>
 
         <div class="project" id="project">
             <div class="project-image">
@@ -78,11 +77,11 @@
             </div>     
         </div>
 
-        <section class="card" aria-label="testimonio-usuario">
+        <div class="card" aria-label="testimonio-usuario">
             <img src="./images/user.png" alt="usuario-1">
             <p class="coment-first-text">"Edison ha sido de gran ayuda para acelerar ciertos esfuerzos de desarrollo. Lo que nos hubiera llevado 6 meses solo les llevó 1,5 meses ".</p>
             <p class="coment-second-text">LEONIDAS ESTEBAN / COFUNDADOR Y CEO LEONIDASESTEBAN.COM</p>
-        </section>
+        </div>
 
         <div class="project">
             <div class="project-image">
@@ -96,11 +95,11 @@
             </div>     
         </div>
 
-        <section class="card" aria-label="testimonio-usuario-2">
+        <div class="card" aria-label="testimonio-usuario-2">
             <img src="./images/user2.png" alt="usuario-2">
             <p class="coment-first-text">"Edison ha superado mis expectativas desde el diseño hasta el desarrollo".</p>
             <p class="coment-second-text">JASON LOPEZ / COFUNDADOR Y CEO MARVOL</p>
-        </section>
+        </div>
 
         <div class="project">
             <div class="project-image">
@@ -115,13 +114,13 @@
             </div>     
         </div>
 
-        <section class="card" aria-label="testimonio-usuario-3">
+        <div class="card" aria-label="testimonio-usuario-3">
             <img src="./images/user3.png" alt="usuario-3">
             <p class="coment-first-text">"Por primera vez en la historia de nuestra empresa, aparecimos en todas las plataformas en las que trabajamos".</p>
             <p class="coment-second-text">MARCO CORTEZ / NETNET</p>
-        </section>
+        </div>
 
-        <form action="" method="get" class="form">
+        <form action="" class="form" id="form">
             <div class="form-content">
                 <h2 class="title">Hablemos</h2>
                 <p>Si está interesado en trabajar conmigo en su próximo proyecto, no dude en ponerse en contacto conmigo.</p>               
@@ -131,7 +130,7 @@
                 </label>
                 <label for="form-name">
                     Correo electronico
-                    <input required name="email" id="form-name" type="email" placeholder="Correo">
+                    <input required name="email" id="form-name" type="email" placeholder="edison@gmail.com">
                 </label>
                 <label for="form-name">
                     Mensaje
@@ -140,6 +139,8 @@
                <button class="button" type="submit">Enviar mensaje</button>
             </div>
         </form>
+
+        <a href="mailto:rochina72@gmail.com" id="trucaso">Email</a>
 
         <footer class="footer" id="contact">
             <div class="footer-content">
@@ -161,5 +162,19 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        const $form = document.querySelector('#form')
+        const $buttonMailto = document.querySelector('#trucaso')
+
+        $form.addEventListener('submit', handleSubmit)
+
+        function handleSubmit(event) {
+            event.preventDefault()
+            const form = new FormData(this)
+            $buttonMailto.setAttribute('href',`mailto:rochina72@gmail.com?subject=name ${form.get('name')} email ${form.get('email')}&body=${form.get('message')}`)
+            $buttonMailto.click()
+        }
+    </script>
 </body>
 </html>

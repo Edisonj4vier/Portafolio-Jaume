@@ -3,10 +3,9 @@
     padding-block-end: 40px;
 }
 
-
-
 .project-image img {
     max-inline-size: 100%;
+    text-align: center;
 }
 
 .project-description {
@@ -15,7 +14,7 @@
     gap: 16px;
 }
 
-@media screen and (min-width:768px){
+@media screen and (min-width:768px) {
     .project{
         display: flex;
         align-items: center;
@@ -28,7 +27,7 @@
         flex: 1;
     }
 
-    .project:nth-child(even) .project-image {
+    .project:nth-child(4n+3) .project-image {
         order: 2;
         flex: 1;
         text-align: center;
